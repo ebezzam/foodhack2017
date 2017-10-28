@@ -21,6 +21,11 @@ CREATE TABLE food (
   bbd DATETIME NOT NULL,
   pickup_start DATETIME NOT NULL,
   pickup_end DATETIME NOT NULL,
+  price_per_unit BOOLEAN NOT NULL,
+  price BIGINT NOT NULL,
+  category VARCHAR(45) NOT NULL,
+  picture VARCHAR(255),
+
   PRIMARY KEY (food_id),
 
   FOREIGN KEY (user_id)
