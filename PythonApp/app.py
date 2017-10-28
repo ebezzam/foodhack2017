@@ -1,15 +1,18 @@
-from flask import Flask, render_template, json, request
-#from flask.ext.mysql import MySQL
+#pip install flask-mysql
 
-#mysql = MySQL()
+
+from flask import Flask, render_template, json, request
+from flask.ext.mysql import MySQL
+
+mysql = MySQL()
 app = Flask(__name__)
 
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'eric'
 app.config['MYSQL_DATABASE_DB'] = 'BucketList'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-#mysql.init_app(app)
+app.config['MYSQL_DATABASE_HOST'] = '10.1.232.217'
+mysql.init_app(app)
 
 
 @app.route('/')
@@ -28,7 +31,18 @@ def signUp():
 	print(_name)
 	print(_email)
 	print(_password)
-	return "Error"
+	conn = mysql.connect()
+	cursor = conn.cursor()
+
+	cursor.callproc('sp_createUser',(_name,_email,_password))
+	data = cursor.fetchall()
+
+	if len(data) is 0:
+		conn.commit()
+		return "Sign"
+	else:
+		return "Error"
+
 
 if __name__ == "__main__":
 	app.run(port=5000)
