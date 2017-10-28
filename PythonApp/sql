@@ -1,0 +1,36 @@
+CREATE DATABASE Foodlist;
+
+CREATE TABLE `Foodlist`.`food` (
+  `id` BIGINT UNIQUE AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `quantity` INT NULL,
+  `company` BIGINT NOT NULL,
+  `location_lat` DOUBLE DEFAULT NULL,
+  `location_long` DOUBLE DEFAULT NULL,
+  `postdate` DATETIME DEFAULT NOW(),
+  `bbd` DATETIME NOT NULL,
+  `pickup_start` DATETIME NOT NULL,
+  `pickup_end` DATETIME NOT NULL,
+  PRIMARY KEY (`id`)
+
+  FOREIGN KEY (`company`)
+    REFERENCES company(id)
+    ON DELETE CASCADE
+);
+
+CREATE TABLE `Foodlist`.`company` (
+  `id` BIGINT UNIQUE AUTO_INCREMENT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `rating` BIGINT NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Foodlist`.`users` (
+  `id` BIGINT UNIQUE AUTO_INCREMENT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `rating` BIGINT NOT NULL,
+  PRIMARY KEY (`id`)
+);
