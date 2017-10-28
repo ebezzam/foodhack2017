@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Python Flask Bucket List App</title>   
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="../static/css/signup.css" rel="stylesheet">
+    <script src="../static/js/jquery-1.11.2.js"></script>
+    <script src="../static/js/addItem.js"></script>
+   
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="showHome">Home</a></li>
+            <li role="presentation"><a href="#">Sign In</a></li>
+            <li role="presentation" class="active"><a href="#">Sign Up</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Add food item!</h1>
+        <form class="form-signin">
+
+<label for="inputName" class="sr-only">Name</label>
+      
+
+<!--  <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+       --> 
+
+
+        <label for="inputName" class="sr-only">Item</label>
+        <input type="name" name="Item" id="Item" class="form-control" placeholder="Item" required autofocus>
+
+        <label for="Quantity" class="sr-only">Quantity</label>
+        <input type="name" name="Quantity" id="Quantity" class="form-control" placeholder="Quantity" required>
+
+	<label for="Price" class="sr-only">Price</label>
+        <input type="name" name="Price" id="Price" class="form-control" placeholder="Price" required>
+
+	<label for="Price" class="sr-only">Image URL</label>
+        <input type="name" name="URL" id="URL" class="form-control" placeholder="URL to Image" required>
+
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Register Item</button>
+      </form>
+      </div>
+
+      
+
+      <footer class="footer">
+        <p>&copy; Company </p>
+      </footer>
+
+    </div>
+  </body>
+</html>
+

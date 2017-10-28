@@ -32,7 +32,7 @@ BEGIN
         pickup_end,
         price_per_unit,
         price,
-        caterory,
+        category,
         picture
     )
     values
